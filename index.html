@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>Lab2</title>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
 
     <script src="src/index.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Дифференцирование</h1>
     <div>
-        <h3>Введите многочлен</h3>
-        <input placeholder="например, 3x^2 + 2x + 1" id="expression"/>
+      <h3>Введите многочлен</h3>
+      <input placeholder="например, 3x^2 + 2x + 1" id="expression" />
     </div>
     <h3>Введите переменную</h3>
-    <div><input placeholder="например, x" id="variable"/></div>
-    <div><button id="diffButton" style="margin-top: 20px;">Найти производную</button></div>
+    <div><input placeholder="например, x" id="variable" /></div>
+    <div>
+      <button id="diffButton" style="margin-top: 20px">
+        Найти производную
+      </button>
+    </div>
     <h3>Результат: <span id="result"></span></h3>
-</body>
+  </body>
 </html>

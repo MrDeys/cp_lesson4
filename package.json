@@ -6,9 +6,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
-    "@parcel/babel-preset-env": "^2.7.0" ,
+    "@parcel/babel-preset-env": "^2.7.0",
     "babel-jest": "^29.0.3",
-    "jest": "^29.0.3",
+    "jest": "^29.7.0",
     "parcel": "^2.7.0"
   }
 }
