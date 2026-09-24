@@ -1,14 +1,16 @@
+import { MiniMaple } from './miniMaple.js';
+
 document.addEventListener('DOMContentLoaded',setup)
 
 function setup() {
-    document.getElementById('demoButton').onclick = addSomething;
-}
+    const diffButton = document.getElementById('diffButton');
+    diffButton.addEventListener('click', () => {
+        const expressionInput = document.getElementById('expression');
+        const variableInput = document.getElementById('variable');
+        const resultSpan = document.getElementById('result');
+        
+        const miniMaple = new MiniMaple();
+        resultSpan.textContent = miniMaple.diff(expressionInput.value, variableInput.value);
+    });
 
-function addSomething(){
-    const someDummyDiv = document.createElement('div');
-    someDummyDiv.classList.add('generated');
-    const count = document.getElementsByClassName('generated').length;
-    someDummyDiv.innerHTML = `I was created by JS! There are already ${count} of my friends!`;
-    const container = document.getElementById('container');
-    container.appendChild(someDummyDiv);
 }

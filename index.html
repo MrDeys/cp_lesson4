@@ -8,14 +8,15 @@
 </head>
 
 <body>
-<h1>Implement the symbolic diff here</h1>
-<div id="container">
+    <h1>Дифференцирование</h1>
 
-</div>
-<div>
-    <button id="demoButton">
-        Add something
-    </button>
-</div>
+    <div>
+        <h3>Введите многочлен</h3>
+        <input placeholder="например, 3x^2 + 2x + 1" id="expression"/>
+    </div>
+    <h3>Введите переменную</h3>
+    <div><input placeholder="например, x" id="variable"/></div>
+    <div><button id="diffButton" style="margin-top: 20px;">Найти производную</button></div>
+    <h3>Результат: <span id="result"></span></h3>
 </body>
 </html>
