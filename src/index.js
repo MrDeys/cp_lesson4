@@ -1,16 +1,32 @@
-import { MiniMaple } from './miniMaple.js';
+import { MiniMaple } from "./miniMaple.js";
 
-document.addEventListener('DOMContentLoaded',setup)
+document.addEventListener('DOMContentLoaded', setup);
 
 function setup() {
-    const diffButton = document.getElementById('diffButton');
-    diffButton.addEventListener('click', () => {
-        const expressionInput = document.getElementById('expression');
-        const variableInput = document.getElementById('variable');
-        const resultSpan = document.getElementById('result');
-        
-        const miniMaple = new MiniMaple();
-        resultSpan.textContent = miniMaple.diff(expressionInput.value, variableInput.value);
-    });
+    const btn = document.getElementById('demoButton');
+    if (btn) {
+        btn.onclick = computeDiff;
+    }
+}
 
+function computeDiff() {
+    const exprInput = document.getElementById('exprInput').value;
+    const symInput = document.getElementById('symInput').value || 'x';
+    const container = document.getElementById('container');
+
+    const mm = new MiniMaple();
+    const parsedExpr = mm.parse(exprInput);
+    const diffList = mm.diffList(parsedExpr, symInput);
+
+    const originalLatex = mm.toLaTeX(parsedExpr);
+    const resultLatex = mm.toLaTeX(diffList);
+
+    container.innerHTML = `
+        <p><strong>Исходная функция:</strong> \\( f(${symInput}) = ${originalLatex} \\)</p>
+        <p><strong>Производная:</strong> \\( \\frac{df}{d${symInput}} = ${resultLatex} \\)</p>
+    `;
+
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise();
+    }
 }

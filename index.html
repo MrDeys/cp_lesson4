@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <title>Lab2</title>
     <meta charset="UTF-8"/>
 
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
     <script src="src/index.js" type="module"></script>
+    <style>
+        body { font-family: sans-serif; margin: 30px; }
+        .input-group { margin-bottom: 15px; }
+        input { padding: 6px 10px; font-size: 16px; }
+        button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+        #container { margin-top: 20px; font-size: 18px; }
+    </style>
 </head>
 
 <body>
-    <h1>Дифференцирование</h1>
-    <div>
-        <h3>Введите многочлен</h3>
-        <input placeholder="например, 3x^2 + 2x + 1" id="expression"/>
+    <h1>MiniMaple: Дифференцирование</h1>
+
+    <div class="input-group">
+        <label>Выражение: </label>
+        <input type="text" id="exprInput" value="4*x^3 - x^2 + 5" placeholder="например, 4*x^3 - x^2 + 5"/>
     </div>
-    <h3>Введите переменную</h3>
-    <div><input placeholder="например, x" id="variable"/></div>
-    <div><button id="diffButton" style="margin-top: 20px;">Найти производную</button></div>
-    <h3>Результат: <span id="result"></span></h3>
+    <div class="input-group">
+        <label>Дифференцировать по: </label>
+        <input type="text" id="symInput" value="x" size="3"/>
+    </div>
+    <div>
+        <button id="demoButton">Вычислить производную</button>
+    </div>
+
+    <div id="container"></div>
 </body>
 </html>
